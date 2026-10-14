@@ -229,7 +229,7 @@ document.getElementById('before').innerHTML=how(false)
  +'<div class="notice">'+D.t.usOnly+'</div>'
  +'<div class="sec" style="position:relative">'+D.t.goTos+'</div><div class="secsub">'+D.t.goTosSub+'</div>'
  +'<div style="position:relative"><div class="mark" style="left:-6px;top:-6px;right:-6px;height:120px"><b>2</b></div><div class="bgrid">'+D.gotos.map(function(g){return '<div class="gcard"><div class="nm">'+esc(g.name)+'</div><div class="pr">'+g.products.join(' · ')+'</div><div class="bd">'+g.body.map(function(p){return '<p>'+esc(p)+'</p>'}).join('')+'</div><div class="askBtn">'+D.t.ask+'</div></div>'}).join('')+'</div></div>'
- +'<div style="position:relative"><div class="mark" style="left:-6px;top:22px;right:-6px;height:50px"><b>3</b></div><div class="sec">'+D.t.featured+'</div></div><div class="secsub">'+D.t.featuredSub+'</div>'
+ +'<div style="position:relative"><div class="mark" style="left:-6px;top:-8px;right:-6px;height:36px"><b>3</b></div><div class="sec">'+D.t.featured+'</div></div><div class="secsub">'+D.t.featuredSub+'</div>'
  +D.featured.map(function(f){return '<div class="featRow"><div class="fn">'+esc(f.name)+'</div><div class="fl">'+esc(f.line)+'</div><div class="askBtn">'+D.t.ask+'</div></div>'}).join('')
  +tail();
 /* AFTER */
