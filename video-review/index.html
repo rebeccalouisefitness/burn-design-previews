@@ -17,8 +17,8 @@ input.t{width:100%;border:1px solid var(--line);border-radius:10px;padding:8px 1
 .ap{background:var(--plum);color:#fff}.rj{background:var(--cream);color:var(--plumD)}.pv{background:#fff;border:1px solid var(--line);color:var(--ink)}
 .done{opacity:.55}.msg{font-weight:600;margin-top:8px}.empty{text-align:center;padding:40px;color:var(--mut)}
 video{width:100%;border-radius:12px;margin-top:8px;display:none}</style></head><body><div class="w">
-<h1>New videos to approve</h1><p class="mut">Videos your mum uploaded in Mux, matched to their workouts. Nothing here is in the app until you press <b>Approve</b>. Tap a tag to switch it on or off, or add your own.</p>
-<div id="list"><p class="mut">Loading…</p></div></div>
+<h1>New videos and thumbnails to approve</h1><p class="mut">Videos your mum uploaded in Mux, matched to their workouts. Nothing here is in the app until you press <b>Approve</b>. Tap a tag to switch it on or off, or add your own.</p>
+<div id="list"><p class="mut">Loading…</p></div><h2 style="font:600 28px 'Cormorant Garamond',serif;color:var(--plumD);margin-top:40px">Thumbnails</h2><p class="mut">Images from your mum's folder, matched to workouts by file name. Check the workout is right, then Approve. The app shows the new image once you approve.</p><div id="thumbs"><p class="mut">Loading…</p></div></div>
 <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
 <script>
 const SB='https://zhvsfaepwcoepgyqrbdt.supabase.co',ANON='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpodnNmYWVwd2NvZXBneXFyYmR0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0ODUxODEsImV4cCI6MjEwNTA2MTE4MX0.1UBBoSrMCazQmjnc9nbW0WP-DGDDWmfhyqrvuVu57Cw';
@@ -52,4 +52,20 @@ function card(v){const s=v.suggested_tags||{},why=v.tag_reasons||{};const el=doc
  try{const rows=await rpc('mux_review_list',{k:K});L.innerHTML='';if(!rows.length){L.innerHTML='<p class="empty">Nothing waiting. New uploads appear here within 15 minutes.</p>';return}
   L.insertAdjacentHTML('beforeend',`<p class="mut">${rows.length} waiting</p>`);rows.forEach(r=>L.appendChild(card(r)))}
  catch(e){L.innerHTML='<p class="empty">Could not load: '+esc(e.message)+'</p>'}})();
+
+function tcard(t){const el=document.createElement('div');el.className='card';
+ const opts=(t.options||[]);const sure=!!t.chosen_row;
+ el.innerHTML=`<div class="top"><div><img class="thumb" src="${esc(t.image_url)}"><div class="why">File: ${esc(t.file_name)}</div></div>
+ <div><div class="k" style="margin-top:0">Which workout is this for?</div><div class="why">${sure?'Matched by name':'<b style="color:#A88C67">Not sure, please pick</b>'}</div>
+ ${opts.map((o,i)=>`<label style="display:block;margin:8px 0;font-size:14px"><input type="radio" name="w${t.id}" value="${o.row_id}" ${o.row_id===t.chosen_row?'checked':''}> <b>${esc(o.title)}</b> <span class="why">(${Math.round(o.score*100)}% match${o.status==='review'?', video waiting for review':''})</span></label>`).join('')}
+ <div class="btns"><button class="b ap">Approve</button><button class="b rj">None of these</button></div><div class="msg"></div></div></div>`;
+ const go=async(d)=>{const sel=el.querySelector('input[type=radio]:checked');if(d==='approve'&&!sel){el.querySelector('.msg').textContent='Pick the workout first.';return}
+  try{await rpc('mux_thumb_decide',{k:K,review_id:t.id,row_id:sel?sel.value:null,decision:d,note:d==='reject'?'none of the suggested workouts':''});
+   el.classList.add('done');el.querySelector('.msg').textContent=d==='approve'?'Approved. The app now shows this image.':'Set aside. Claude will ask you which workout it is.';el.querySelectorAll('button,input').forEach(b=>b.disabled=true)}
+  catch(e){el.querySelector('.msg').textContent='Could not save: '+e.message}};
+ el.querySelector('.ap').onclick=()=>go('approve');el.querySelector('.rj').onclick=()=>go('reject');return el}
+(async()=>{const T=document.getElementById('thumbs');if(!K){T.innerHTML='';return}
+ try{const rows=await rpc('mux_thumb_list',{k:K});T.innerHTML='';if(!rows.length){T.innerHTML='<p class="empty">No thumbnails waiting.</p>';return}
+  T.insertAdjacentHTML('beforeend',`<p class="mut">${rows.length} waiting</p>`);rows.forEach(r=>T.appendChild(tcard(r)))}
+ catch(e){T.innerHTML='<p class="empty">Could not load: '+esc(e.message)+'</p>'}})();
 </script></body></html>
