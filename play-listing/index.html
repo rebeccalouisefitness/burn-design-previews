@@ -1,148 +1,181 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BURN · Google Play listing · proposal for Rebecca</title>
-<meta name="robots" content="noindex">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<title>BURN · Store listing review for Rebecca</title><meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--m:#8E5F70;--md:#6E4556;--cream:#F7F3EF;--sand:#EFE6DF;--ink:#2B2326;--mute:#7A6E71}
+:root{--m:#8E5F70;--md:#6B4553;--cream:#F7F3EF;--sand:#EFE6DF;--ink:#2B2326;--mute:#7A6E71}
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.5}
-.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 80px}
-h1,h2,.serif{font-family:'Cormorant Garamond',serif;font-weight:600}
-h1{font-size:40px;margin:0 0 4px}h2{font-size:30px;margin:48px 0 6px}
-.note{color:var(--mute);font-size:14px;max-width:760px}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 20px 90px}
+h1,h2{font-family:'Cormorant Garamond',serif;font-weight:600}h1{font-size:40px;margin:6px 0}h2{font-size:31px;margin:56px 0 8px}
+.note{color:var(--mute);font-size:14.5px;max-width:820px}
 .pill{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:var(--sand);color:var(--md);font-weight:600}
-.pill.red{background:#F6DADA;color:#9B2F2F}.pill.amber{background:#F7E8CC;color:#8A5A12}.pill.green{background:#DDEBDD;color:#2F6B35}
-.row{display:flex;gap:14px;overflow-x:auto;padding:14px 2px 18px;scroll-snap-type:x mandatory}
-.card{flex:none;width:250px;scroll-snap-align:start}
-.cur img{width:250px;height:500px;object-fit:cover;object-position:top;border-radius:14px;border:1px solid #e3d9d3;background:#fff;display:block}
-.cap{font-size:12.5px;margin-top:8px;color:var(--mute)}
-.cap b{color:var(--ink)}
-/* proposed store frames: 1080x1920 ratio (9:16) */
-.frame{width:250px;height:444px;border-radius:14px;background:var(--m);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center}
-.frame.alt{background:var(--sand)}.frame.alt .hl{color:var(--ink)}
-.hl{font-family:'Cormorant Garamond',serif;font-weight:600;color:#fff;font-size:25px;line-height:1.08;text-align:center;padding:22px 16px 12px;min-height:96px;display:flex;align-items:center}
-.phone{width:188px;flex:1;border-radius:22px 22px 0 0;border:6px solid #1d1a1b;border-bottom:0;overflow:hidden;background:#fff}
-.phone img{width:100%;display:block}
-.flag{font-size:12px;margin-top:8px;padding:8px 10px;border-radius:10px;background:#fff;border:1px solid #eadfd8}
-.flag.fix{border-color:#efc9c9;background:#fff6f6}
-table{border-collapse:collapse;width:100%;font-size:14px;background:#fff;border-radius:12px;overflow:hidden}
-td,th{text-align:left;padding:10px 12px;border-bottom:1px solid #eee;vertical-align:top}th{background:var(--sand);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:820px){.cols{grid-template-columns:1fr}}
-.box{background:#fff;border:1px solid #eadfd8;border-radius:14px;padding:16px 18px;white-space:pre-wrap;font-size:14px}
-.box.new{border-color:var(--m)}
-.small{font-size:12px;color:var(--mute)}
+.grid{display:grid;grid-template-columns:420px 1fr;gap:40px;align-items:start}@media(max-width:980px){.grid{grid-template-columns:1fr}}
+/* phone mock of Google Play */
+.device{width:400px;max-width:100%;margin:0 auto;border:12px solid #1b1718;border-radius:46px;overflow:hidden;background:#fff;box-shadow:0 30px 70px rgba(62,42,51,.25)}
+.gp{font-family:Roboto,Arial,sans-serif;color:#1f1f1f;height:820px;overflow-y:auto}
+.gp .bar{display:flex;justify-content:space-between;padding:10px 18px 4px;font-size:13px;font-weight:500}
+.gp .top{display:flex;gap:14px;padding:14px 18px 8px}
+.gp .icon{width:72px;height:72px;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.gp .t{font-size:21px;font-weight:500;line-height:1.2}.gp .dev{color:#0b57d0;font-size:13.5px;margin-top:4px;font-weight:500}.gp .iap{font-size:11.5px;color:#5f6368;margin-top:2px}
+.gp .stats{display:flex;justify-content:space-around;padding:10px 12px;border-bottom:0;font-size:12px;color:#5f6368;text-align:center}
+.gp .stats b{display:block;color:#1f1f1f;font-size:13.5px;font-weight:500}
+.gp .install{margin:6px 18px 12px;background:#0b57d0;color:#fff;text-align:center;border-radius:20px;padding:9px;font-weight:500;font-size:14px}
+.gp .car{display:flex;gap:8px;overflow-x:auto;padding:4px 18px 10px}.gp .car img{height:300px;border-radius:10px;flex:none}
+.gp .car img.fg{height:150px;align-self:flex-start;border-radius:10px}
+.gp .sec{padding:12px 18px}.gp .sec h3{font-size:17px;font-weight:500;margin:0 0 6px;display:flex;justify-content:space-between}
+.gp .desc{white-space:pre-wrap;font-size:13.5px;color:#444746;line-height:1.5}
+.gp .chips span{display:inline-block;border:1px solid #c4c7c5;border-radius:8px;padding:4px 10px;font-size:12px;margin:6px 6px 0 0}
+.gp .rate{color:#5f6368;font-size:13px}
+.flag{background:#fff;border:1px solid #eadfd8;border-radius:12px;padding:12px 14px;margin:8px 0;font-size:14px}
+.flag b{color:var(--md)}
+.set{display:flex;gap:12px;overflow-x:auto;padding:12px 2px 16px}.set a{flex:none}.set img{height:520px;border-radius:12px;box-shadow:0 6px 18px rgba(62,42,51,.15);display:block}
+.set.ip img{height:520px}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff;border-radius:12px;overflow:hidden}td,th{text-align:left;padding:9px 12px;border-bottom:1px solid #eee;vertical-align:top}th{background:var(--sand);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.src{font-size:12.5px;color:var(--mute)}.src a{color:var(--md)}
 </style></head><body><div class="wrap">
+<span class="pill">Review · nothing uploaded</span>
+<h1>BURN on Google Play: your store page</h1>
+<p class="note">This is how your listing will look on a phone, with your own description word for word and the new screenshots in the style you sent. Every phone shows the real app: the current build (Preview 407), November dates and demo data with made-up names, never real members. Nothing has been uploaded to Google Play or the App Store.</p>
 
-<span class="pill">Design first · nothing uploaded</span>
-<h1>BURN on Google Play: proposed store page</h1>
-<p class="note">Prepared 28 Oct 2026 for Rebecca's approval. <b>Updated:</b> the name, descriptions and captions are rewritten in your voice. Nothing in Play Console has been changed. The app itself is approved (version 7). It isn't public yet because <b>Publish 6 changes</b> hasn't been pressed.</p>
+<div class="grid">
+<div>
+<div class="device"><div class="gp">
+ <div class="bar"><span>9:41</span><span>▲ ▮▮</span></div>
+ <div class="top"><img class="icon" src="v3/icon.png" alt=""><div><div class="t">BURN by Rebecca Louise</div><div class="dev">Rebecca-Louise</div><div class="iap">In-app purchases</div></div></div>
+ <div class="stats"><div><b>New</b>No reviews yet</div><div><b>Teen</b>Rated for 13+</div><div><b>Health &amp; Fitness</b>Category</div></div>
+ <div class="install">Install</div>
+ <div class="car"><img class="fg" src="v3/feature.jpg" alt=""><img src="v3/play/01-hero.jpg" alt=""><img src="v3/play/02-challenge.jpg" alt=""><img src="v3/play/03-move.jpg" alt=""><img src="v3/play/04-recipes.jpg" alt=""><img src="v3/play/05-together.jpg" alt=""><img src="v3/play/06-clubs.jpg" alt=""><img src="v3/play/07-friends.jpg" alt=""><img src="v3/play/08-progress.jpg" alt=""></div>
+ <div class="sec"><h3>About this app <span>→</span></h3><div class="desc">BURN BY REBECCA LOUISE
+Move. Nourish. Thrive.
 
-<h2>1 · What's on the store page now</h2>
-<p class="note">These are the 4 phone screenshots that are uploaded now (Play allows 8). They're plain app screens with no captions, the program calendar comes first, and the dates say October.</p>
-<div class="row">
- <div class="card cur"><img src="img/play-shot1.jpg" alt=""><div class="cap"><b>1 · Program calendar</b><br>"Get Lean" · "Big Booty Burner". A weak first image, and the names lean toward body-shape claims.</div></div>
- <div class="card cur"><img src="img/play-shot2.jpg" alt=""><div class="cap"><b>2 · Nourish</b><br>Shows the <b>Supplements</b> tab and "Complimentary call · Advice from Rebecca's Coaches", which is the Herbalife route.</div></div>
- <div class="card cur"><img src="img/play-shot3.jpg" alt=""><div class="cap"><b>3 · Today</b><br>"Thursday, Oct 8" · "October Reset &amp; Rise". This is the best screen, but it's dated and will look old from 1 Nov.</div></div>
- <div class="card cur"><img src="img/play-shot4.jpg" alt=""><div class="cap"><b>4 · Move library</b><br>Good, clear and current.</div></div>
+One app. Every stage of your journey.
+
+Your fitness journey isn&#x27;t one-size-fits-all. Your app shouldn&#x27;t be either.
+
+Welcome to BURN, your all-in-one fitness and wellness app designed to move with you through every stage of life.
+
+Whether you&#x27;re building strength, getting back into a routine, navigating pregnancy, rebuilding after having a baby or simply making more time for yourself, BURN brings your workouts, nutrition, mindset and community together in one place.
+
+Created by Rebecca Louise, fitness trainer, bestselling author and Mount Everest summiteer, BURN is built around one simple belief: you don&#x27;t have to be perfect to make progress. You just have to keep showing up.
+
+FITNESS THAT FITS YOUR LIFE
+
+No more wondering what workout to do next.
+
+Discover hundreds of guided workouts, structured fitness programs and a brand-new challenge every month.
+
+From strength training and Pilates to HIIT, yoga, stretching and mobility, there&#x27;s something for every fitness level.
+
+Have 10 minutes? Make them count. Have 30? Let&#x27;s get to work.
+
+YOUR JOURNEY. YOUR PLAN.
+
+Your goals, your schedule and your stage of life are unique to you.
+
+With BURN Complete, create a personalized fitness plan built around your needs, preferences and available time.
+
+Choose your focus, follow your plan and adjust it as life changes.
+
+Because your fitness journey should work around your life, not the other way around.
+
+SUPPORT THROUGH EVERY STAGE
+
+Your body changes. Your priorities change. Your fitness can change with you.
+
+With BURN Complete, access dedicated pregnancy workouts tailored to your week and trimester, along with a complete 12-month postpartum fitness journey.
+
+Move from one life stage to another, with workouts and programs designed for where you are right now.
+
+All within the same app.
+
+MORE THAN JUST WORKOUTS
+
+♡ MOVE — Guided workouts, monthly challenges, personalized plans and live classes.
+
+♡ NOURISH — Delicious recipes, meal inspiration and nutrition support.
+
+♡ THRIVE — Mindset, meditation, gratitude and daily inspiration.
+
+♡ CONNECT — A community of women celebrating progress and encouraging each other.
+
+♡ GROW — Track your activity, build consistency and celebrate your achievements.
+
+STAY MOTIVATED, YOUR WAY
+
+Join a new challenge every month, schedule your workouts, create playlists and follow your progress.
+
+Take part in live classes, celebrate your milestones and build daily habits that go beyond fitness.
+
+With three membership experiences — BURN Basic, BURN Plus and BURN Complete — you can choose the features and level of support that work for you.
+
+A NOTE FROM REBECCA
+
+Hi, I&#x27;m Rebecca!
+
+I&#x27;ve spent over a decade helping women around the world feel stronger, healthier and more confident.
+
+I created BURN because I know that life doesn&#x27;t always go to plan.
+
+Some days you have 30 minutes. Some days you have 10. And some days, simply showing up is your biggest achievement.
+
+I wanted to create a place where you could find everything you need to keep moving forward, whatever stage of life you&#x27;re in.
+
+Because fitness isn&#x27;t just about how you look. It&#x27;s about how you feel, what you believe you&#x27;re capable of and the person you&#x27;re becoming along the way.
+
+I can&#x27;t wait to welcome you into BURN.
+
+Rebecca ♡
+
+Privacy Policy:
+https://burn-app-legal.netlify.app/privacy.html
+
+Support:
+https://burn-app-legal.netlify.app/support.html</div>
+ <div class="chips"><span>Health &amp; Fitness</span><span>Workouts</span><span>Women's fitness</span></div></div>
+ <div class="sec"><h3>Data safety <span>→</span></h3><div class="rate">Safety starts with understanding how developers collect and share your data.</div></div>
+ <div class="sec"><h3>Ratings and reviews <span>→</span></h3><div class="rate">Ratings appear here once members start leaving reviews.</div></div>
+</div></div>
+<p class="note" style="text-align:center;font-size:12.5px">Scroll inside the phone. The rating and age rating shown are placeholders: Google fills these in.</p>
 </div>
-<div class="row" style="align-items:flex-start">
- <div class="card"><img src="img/play-icon.png" style="width:120px;border-radius:26px;display:block" alt=""><div class="cap"><b>Icon</b>: matches the new app ✓</div></div>
- <div class="card" style="width:420px"><img src="img/play-feature.jpg" style="width:420px;border-radius:10px;display:block" alt=""><div class="cap"><b>Feature graphic</b>: on-brand and clean, but it's text only, with no you and no app.</div></div>
+<div>
+ <h2 style="margin-top:0">Text</h2>
+ <table>
+ <tr><th>Field</th><th>Text</th><th>Length</th></tr>
+ <tr><td>App name</td><td>BURN by Rebecca Louise</td><td>22 / 30</td></tr>
+ <tr><td>Short description (proposed)</td><td>Your workouts, monthly challenges, recipes and community, all in one place!</td><td>75 / 80</td></tr>
+ <tr><td>Full description</td><td><b>Your own words, unchanged.</b> Only the two links will change to burnrebeccalouise.com once those pages are live.</td><td>3,411 / 4,000 (Play and App Store)</td></tr>
+ </table>
+ <h2>Things to check before we upload</h2>
+ <p class="note">I haven't changed any of your words. These are only flags.</p>
+ <div class="flag"><b>"BURN Basic".</b> The app calls this membership "BURN", not "BURN Basic". A reviewer, or a new member, may look for "Basic" in the app and not find it.</div>
+ <div class="flag"><b>"Hundreds of guided workouts".</b> The Move library shows 125 workouts today. Programs, pregnancy and postpartum workouts may add more. If the total isn't over 200 on launch day, Apple (guideline 2.3) and Google (misleading claims) can ask for it to be changed.</div>
+ <div class="flag"><b>"Bestselling author and Mount Everest summiteer".</b> These are fine if they're true. Reviewers rarely check, but they can ask for proof of any claim.</div>
+ <div class="flag"><b>Subscription terms (App Store).</b> Apple requires a link to your Terms of Use (EULA) for auto-renewing memberships, either in the description or in the App Store Connect EULA field. Your description has Privacy and Support links but no Terms link. We can add it in the EULA field, so your description stays as you wrote it.</div>
+ <div class="flag"><b>Health note (Google Play).</b> Google's health policy recommends a line saying the app isn't a medical device, and asking people to check with a healthcare professional, especially for pregnancy and postpartum workouts. Your description doesn't have one yet. You could add a short line at the end if you'd like.</div>
+ <div class="flag"><b>Links.</b> Privacy and Support move to burnrebeccalouise.com/privacy and /support when the website pages are live. That is the only edit that will be made.</div>
+</div>
 </div>
 
-<h2>2 · Proposed screenshot set (8)</h2>
-<p class="note">Order: Today first, because it's what people see in search results. Captions rewritten in your voice (v2, 28 Oct). <b>These mock-ups use real screens from the current app build</b>, but some still show October or empty "0 done" states. Before anything is uploaded, we'd capture each screen fresh from the November build using a demo account with real-looking progress (never a member's name or posts).</p>
-<div class="row">
- <div class="card"><div class="frame"><div class="hl">Your workout is ready.<br>Just press play!</div><div class="phone"><img src="img/play-shot3.jpg" alt=""></div></div><div class="flag fix">Recapture: November challenge (Body Redefined), current date.</div></div>
- <div class="card"><div class="frame alt"><div class="hl">A new challenge<br>every month!</div><div class="phone"><img src="img/app-challenge.jpg" alt=""></div></div><div class="flag fix">Recapture: Body Redefined, with a few days ticked.</div></div>
- <div class="card"><div class="frame"><div class="hl">Find a workout that fits your day</div><div class="phone"><img src="img/play-shot4.jpg" alt=""></div></div><div class="flag">Ready to use as it is.</div></div>
- <div class="card"><div class="frame alt"><div class="hl">Let's work out together!</div><div class="phone"><img src="img/app-workout.jpg" alt=""></div></div><div class="flag">The workout player. Real screen ✓</div></div>
- <div class="card"><div class="frame"><div class="hl">Celebrate your wins with the BURN community</div><div class="phone"><img src="img/app-chat.jpg" alt=""></div></div><div class="flag">Your own Body Redefined post. Use only your posts or demo posts, never members'.</div></div>
- <div class="card"><div class="frame alt"><div class="hl">Simple recipes you'll love</div><div class="phone"><img src="img/play-shot2.jpg" alt=""></div></div><div class="flag fix">Recapture on the Recipes tab, so Supplements and the coaching call are out of shot.</div></div>
- <div class="card"><div class="frame"><div class="hl">See how far you've come!</div><div class="phone"><img src="img/app-progress.jpg" alt=""></div></div><div class="flag fix">Recapture with a demo account that has a streak and ticks. This one is empty.</div></div>
- <div class="card"><div class="frame alt"><div class="hl">Meditations and mindset videos, whenever you need them</div><div class="phone" style="display:flex;align-items:center;justify-content:center;background:#F7F3EF"><span class="small" style="padding:14px;text-align:center">Thrive screen<br>not captured yet</span></div></div><div class="flag fix">Needs capturing. There's no Thrive screenshot on file.</div></div>
-</div>
-<p class="note">Size on upload: 1080 × 1920 (9:16) PNG, which is what Play prefers. The current files are 1334 × 2668 (1:2).</p>
+<h2>Google Play screenshots · 1080 × 1920 (9 frames; Play shows up to 8)</h2>
+<p class="note">Order: you first, then the monthly challenge, workouts, recipes, the challenge tab with the daily question, Clubs, friend challenges and progress. Thrive is frame 9: pick 8 for Play, or swap Thrive in for another frame. Tap any image to open it full size.</p>
+<div class="set"><a href="v3/play/01-hero.jpg" target="_blank"><img src="v3/play/01-hero.jpg" alt="01-hero"></a><a href="v3/play/02-challenge.jpg" target="_blank"><img src="v3/play/02-challenge.jpg" alt="02-challenge"></a><a href="v3/play/03-move.jpg" target="_blank"><img src="v3/play/03-move.jpg" alt="03-move"></a><a href="v3/play/04-recipes.jpg" target="_blank"><img src="v3/play/04-recipes.jpg" alt="04-recipes"></a><a href="v3/play/05-together.jpg" target="_blank"><img src="v3/play/05-together.jpg" alt="05-together"></a><a href="v3/play/06-clubs.jpg" target="_blank"><img src="v3/play/06-clubs.jpg" alt="06-clubs"></a><a href="v3/play/07-friends.jpg" target="_blank"><img src="v3/play/07-friends.jpg" alt="07-friends"></a><a href="v3/play/08-progress.jpg" target="_blank"><img src="v3/play/08-progress.jpg" alt="08-progress"></a><a href="v3/play/09-thrive.jpg" target="_blank"><img src="v3/play/09-thrive.jpg" alt="09-thrive"></a></div>
+<h2>Feature graphic · 1024 × 500</h2>
+<p class="note">Same style as the screenshots. You're on the right and the text sits in the centre safe area. There's no phone frame, and no "free", "new" or "best", as Google's rules require.</p>
+<img src="v3/feature.jpg" style="width:100%;max-width:1024px;border-radius:12px;display:block" alt="">
+<h2>iPhone screenshots · 1320 × 2868 (6.9")</h2>
+<div class="set ip"><a href="v3/iphone/01-hero.jpg" target="_blank"><img src="v3/iphone/01-hero.jpg" alt="01-hero"></a><a href="v3/iphone/02-challenge.jpg" target="_blank"><img src="v3/iphone/02-challenge.jpg" alt="02-challenge"></a><a href="v3/iphone/03-move.jpg" target="_blank"><img src="v3/iphone/03-move.jpg" alt="03-move"></a><a href="v3/iphone/04-recipes.jpg" target="_blank"><img src="v3/iphone/04-recipes.jpg" alt="04-recipes"></a><a href="v3/iphone/05-together.jpg" target="_blank"><img src="v3/iphone/05-together.jpg" alt="05-together"></a><a href="v3/iphone/06-clubs.jpg" target="_blank"><img src="v3/iphone/06-clubs.jpg" alt="06-clubs"></a><a href="v3/iphone/07-friends.jpg" target="_blank"><img src="v3/iphone/07-friends.jpg" alt="07-friends"></a><a href="v3/iphone/08-progress.jpg" target="_blank"><img src="v3/iphone/08-progress.jpg" alt="08-progress"></a><a href="v3/iphone/09-thrive.jpg" target="_blank"><img src="v3/iphone/09-thrive.jpg" alt="09-thrive"></a></div>
 
-<h2>3 · Description: now vs proposed</h2>
-<div class="cols">
-<div><span class="pill">Now (live in the listing)</span>
-<p class="small"><b>Name:</b> BURN by Rebecca &nbsp;·&nbsp; <b>Short:</b> Today's workout, ready when you are. Monthly challenges, recipes and mindset.</p>
-<div class="box">BURN is Rebecca Louise's workout app. Open it and today's workout is already there. No deciding, no scrolling, no building a plan before you've even started.
-
-Every month there's a new challenge: a workout for each day of it, a guide to download, and a calendar that fills in behind you as you go. Miss a day and you pick it up the next one. That's the whole idea.
-
-THE WORKOUTS
-The full library, filtered the way you actually think about it — by body part, by the equipment you've got, by how long you have. Ten minutes before the school run is a real option, and so is forty with weights.
-
-Programs you can follow start to finish, each a structured run with a focus. Save the workouts you love and come back to them. Everything you finish is recorded.
-
-THE REST OF IT
-Recipes you can filter by how you eat, and save the ones you return to.
-A mindset and meditation library. A quote each morning. A video to set the day.
-And a community of women doing the same challenge you are, on the same day.
-
-MEMBERSHIPS
-BURN — the workouts, the monthly challenges, the programs, the recipes, the mindset library, the community, and the calendar that tracks all of it.
-BURN+ — everything in BURN, plus your own numbers: workouts this month, your streak, your activity, your milestones. Build playlists of the workouts you keep going back to. A daily gratitude prompt, and everything you've written kept in one place.
-BURN COMPLETE — everything in BURN+, plus pregnancy workouts organized by week and trimester, a twelve-month postpartum rebuild, the expert stretching and mobility library, and a daily mood check-in.
-
-Start where you are. Change tier whenever you like — nothing you've saved or written is lost.
-Memberships and pricing are shown in the app.
-
-Privacy Policy: https://burn-app-legal.netlify.app/privacy.html
-Support: https://burn-app-legal.netlify.app/support.html</div></div>
-<div><span class="pill green">Proposed · in your voice (v2) · 1,822 / 4,000</span>
-<p class="small"><b>Name:</b> BURN by Rebecca Louise <span class="small">(22/30. It's your name, so people searching for you find it, and it matches iPhone.)</span><br><b>Short (75/80):</b> Your workouts, monthly challenges, recipes and community, all in one place!</p>
-<div class="box new">Hi, I'm Rebecca! I'm so excited to share my brand-new BURN app with you.
-
-Every day, your workout is ready and waiting. Just open the app and press play.
-
-♡ A new challenge every month
-Each month there's a new 30-day challenge, with a workout for every day, a guide to download, and a calendar that ticks off each day as you go. Missed a day? That's okay. Just pick it up tomorrow.
-
-♡ Workouts that fit your day
-Find workouts by body part, by the equipment you've got, or by how much time you have. Short on time? Pick a 10-minute workout.
-
-♡ Programs
-Want a plan to follow? Pick a program and do it from start to finish.
-
-♡ Save your favourite workouts
-Found a workout you love? Save it to your favourites so it's always easy to find.
-
-♡ Recipes
-Simple recipes you can filter by how you eat. Save the ones you love.
-
-♡ Mindset
-Meditations, mindset videos and a quote to start your day.
-
-♡ Your BURN community
-Connect with other members, celebrate your wins and keep each other motivated along the way.
-
-♡ Track your progress
-See how far you've come! Every workout you finish is saved, and your calendar fills in as you go.
-
-Choose your membership
-BURN: all the workouts, monthly challenges, programs, recipes, mindset videos and the community.
-BURN Plus: everything in BURN, plus your streaks and milestones, workout playlists and a daily gratitude journal.
-BURN Complete: everything in BURN Plus, plus pregnancy workouts by week and trimester, a 12-month postpartum program, the stretching and mobility library and a daily mood check-in.
-
-You can change your membership any time. Everything you've saved stays. You'll see all the memberships and prices in the app.
-
-I can't wait to see you inside!
-
-Privacy Policy: https://burn-app-legal.netlify.app/privacy.html
-Support: https://burn-app-legal.netlify.app/support.html</div></div>
-</div>
-<p class="note">No weight-loss promises, no Herbalife or supplements, no testimonials and no prices. Prices change by country and live in the app, which keeps Play review simple.</p>
-
-<h2>4 · Other things to decide</h2>
+<h2>What the research says (and what we did)</h2>
 <table>
-<tr><th>Item</th><th>Now</th><th>Suggest</th></tr>
-<tr><td>Contact email (public on Play)</td><td>rebecca@rebecca-louise.com · no website</td><td>customerservice@ + burnrebeccalouise.com. Please confirm which inbox you want public.</td></tr>
-<tr><td>Category / tags</td><td>Health &amp; Fitness · no tags</td><td>Keep the category. Add tags: Workout, Home workout, Women's fitness, Yoga &amp; Pilates</td></tr>
-<tr><td>Video</td><td>None</td><td>Optional: a 30-second unlisted YouTube app tour (ads off)</td></tr>
-<tr><td>Feature graphic</td><td>Mauve, text only</td><td>Optional: same layout with a photo of you on the right</td></tr>
+<tr><th>Rule or best practice</th><th>What we did</th></tr>
+<tr><td>Up to 8 phone screenshots. Use at least 4 at 1080px+ (9:16) to be eligible for Google's promoted spots.</td><td>9 frames at 1080 × 1920. Pick your 8.</td></tr>
+<tr><td>Show the real app experience. Text overlays should cover no more than about 20% of the image. No "Download now" style calls to action and nothing time-sensitive. Clean status bar.</td><td>Real app screens only. One headline and one short line per frame. Status bar shows 9:41 with full signal. The challenge banner reads "November", which will need refreshing each month.</td></tr>
+<tr><td>Feature graphic 1024 × 500. Keep the focus in the centre, no device frames, no "Best/#1/Free/Sale", and avoid plain white or black backgrounds.</td><td>Mauve background with your photo. No device, no promotional words.</td></tr>
+<tr><td>Title up to 30 characters: no emoji, no "free" or ranking words. Short description up to 80. Full description up to 4,000, in everyday language rather than a keyword list. No anonymous testimonials.</td><td>Title 22 and short description 75. Your description is 3,411 and has no testimonials.</td></tr>
+<tr><td>Subscriptions: be clear that payment is required. No prices or "% off" in images.</td><td>No prices or offers anywhere in the images. Your description names the three memberships.</td></tr>
+<tr><td>Health apps: complete the Health apps declaration. A "not a medical device / consult a professional" line is recommended.</td><td>Declaration already saved in Play Console. The disclaimer is flagged above for you to decide.</td></tr>
+<tr><td>Top fitness apps (Sweat, Centr, Nike Training Club, Peloton) all use a "Brand: keyword" title, capital-letter headings with bullets, no emoji in the title, and subscription terms at the end.</td><td>Your description already follows this structure.</td></tr>
 </table>
-<p class="small" style="margin-top:30px">Prepared for BRN-350 · read-only review · nothing uploaded or saved in Play Console.</p>
+<p class="src">Sources: Google Play Console Help, <a href="https://support.google.com/googleplay/android-developer/answer/9866151">Preview assets</a> · <a href="https://support.google.com/googleplay/android-developer/answer/9898842">Metadata policy</a> · <a href="https://support.google.com/googleplay/android-developer/answer/13393723">Store listing best practices</a> · <a href="https://support.google.com/googleplay/android-developer/answer/16679511">Health Content and Services</a> · <a href="https://support.google.com/googleplay/android-developer/answer/9900533">Subscriptions</a> · <a href="https://support.google.com/googleplay/android-developer/answer/4448378">Search and discovery</a> · <a href="https://developer.android.com/distribute/google-play/resources/icon-design-specifications">Icon specs</a> · Apple <a href="https://developer.apple.com/app-store/review/guidelines/">App Review Guidelines</a> 2.3 and 3.1.2 · Live listings of Sweat, Centr, Nike Training Club and Peloton (checked 28 Oct 2026).</p>
+<p class="src" style="margin-top:30px">BRN-352 · Prepared 28 Oct 2026 · Upload nothing until you've picked.</p>
 </div></body></html>
