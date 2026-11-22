@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>BURN × Lakewood Ranch City Lifestyle — ad designs</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--lav:#c9c3ff;--lavl:#dfdbff;--green:#d8d055;--cream:#faf7f1;--ink:#141414;--grey:#727272}
+*{box-sizing:border-box}body{margin:0;font-family:Poppins,sans-serif;background:var(--cream);color:var(--ink)}
+header{background:var(--ink);color:#fff;padding:14px 18px}
+header h1{font-family:Anton;font-weight:400;letter-spacing:.5px;margin:0;font-size:22px;color:var(--lav)}
+header p{margin:4px 0 0;font-size:12px;color:#ddd}
+.bar{display:flex;gap:8px;align-items:center;justify-content:center;padding:12px;flex-wrap:wrap}
+.bar button{font:600 13px Poppins;border:0;border-radius:99px;padding:9px 16px;background:var(--lavl);cursor:pointer}
+.bar button.on{background:var(--ink);color:#fff}
+.stage{display:flex;justify-content:center;align-items:center;min-height:62vh;padding:10px;touch-action:pan-y}
+.stage img{box-shadow:0 6px 30px rgba(0,0,0,.18);background:#fff;display:block}
+.large .stage img{width:min(92vw,560px);height:auto}
+.print .stage img{width:3.458in;height:4.75in}
+.print .stage{background:#fff;border:1px dashed #bbb;margin:0 auto;max-width:620px;min-height:auto;padding:30px}
+.meta{max-width:640px;margin:0 auto;padding:6px 18px 10px;text-align:center}
+.meta h2{font-family:Anton;font-weight:400;font-size:24px;margin:4px 0}
+.meta .n{font-size:12px;color:var(--grey)}
+.meta p{font-size:13.5px;margin:6px 0}
+.meta a{color:var(--ink);font-weight:600}
+.nav{display:flex;justify-content:space-between;max-width:640px;margin:0 auto;padding:0 18px}
+.nav button{font:700 15px Poppins;border:0;border-radius:99px;padding:12px 22px;background:var(--lav);cursor:pointer}
+.dots{display:flex;gap:6px;justify-content:center;padding:12px}
+.dots span{width:9px;height:9px;border-radius:50%;background:#ccc;cursor:pointer}.dots span.on{background:var(--ink)}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:760px;margin:10px auto;padding:0 18px}
+.thumbs img{width:100%;cursor:pointer;border:3px solid transparent}.thumbs img.on{border-color:var(--ink)}
+.notes{max-width:760px;margin:20px auto 50px;padding:0 18px;font-size:13.5px;line-height:1.55}
+.notes h3{font-family:Anton;font-weight:400;font-size:19px;margin:22px 0 6px}
+.card{background:#fff;border-radius:10px;padding:14px 16px;margin:8px 0}
+.hint{font-size:12px;color:var(--grey);text-align:center}
+@media(max-width:600px){.thumbs{grid-template-columns:repeat(4,1fr);gap:6px}}
+</style></head>
+<body class="large">
+<header><h1>BURN × LAKEWOOD RANCH CITY LIFESTYLE</h1>
+<p>¼ page vertical print ad · 3.458" × 4.75" · 8 designs · tap through and pick your favourites</p></header>
+
+<div class="bar"><button id="bLarge" class="on">Large preview</button><button id="bPrint">Print size (actual inches)</button></div>
+<p class="hint" id="printHint" style="display:none">Shown at real size (3.458" × 4.75"). Screens vary, so hold a ruler up to check. This is roughly how big it'll be on the page.</p>
+<div class="stage" id="stage"><img id="main" alt=""></div>
+<div class="nav"><button id="prev">‹ Prev</button><button id="next">Next ›</button></div>
+<div class="dots" id="dots"></div>
+<div class="meta"><div class="n" id="num"></div><h2 id="ttl"></h2><p id="why"></p>
+<p><a id="pdf" href="#" target="_blank">Print PDF (exact size)</a> · <a id="pdfb" href="#" target="_blank">PDF with 0.125" bleed</a></p></div>
+<div class="thumbs" id="thumbs"></div>
+
+<div class="notes">
+<h3>WHAT'S ON EVERY AD</h3>
+<div class="card">The real BURN flame logo · one of your purple-shoot photos (face in frame) · a headline in your voice · <b>10% OFF for City Lifestyle readers, code CITYLIFE10</b> · a QR code to <b>burnrebeccalouise.com/citylifestyle</b> (0.8" code with a white quiet zone, about 1" overall) · the printed link · the line "Workouts, monthly challenges and nutrition support, all in one app."<br>Colours are BURN brand-kit only (lavender, BURN green, cream, black). Fonts are Anton and Poppins.</div>
+
+<h3>THE SIZE: TRIM OR LIVE AREA?</h3>
+<div class="card">City Lifestyle's spec sheet lists 3.458" × 4.75" as the <b>¼ Page Vertical "Total Ad Size Area"</b>. Fractional ads <b>don't bleed</b>: the ad sits inside the page and 3.458" × 4.75" is the finished size. So the <b>exact-size PDF is the one to send</b>. Text and the QR stay about 0.14" in from every edge. The bleed versions are there in case the magazine asks for them.<br>
+Their rules: CMYK, 300 dpi or higher, PDF or JPG, no crop marks. Backgrounds run to the edge, and if there's no background the ad needs a thin border. Every design here fills the whole background, so no border is needed. The PDFs are CMYK, the photos are 300 dpi and the text and QR are vector.</div>
+
+<h3>WHY THEY LOOK LIKE THIS (RESEARCH)</h3>
+<div class="card">On a busy magazine page the ads that stand out have <b>one strong photo, one short headline and one offer</b>, with plenty of space. The eye moves from the headline (top) to the call to action (bottom right), so the QR sits bottom right on most designs. The offer is the second-biggest thing on each ad.<br>
+QR codes in print need to be at least about <b>0.8" (2 cm)</b> at reading distance, with a <b>4-module white quiet zone</b>, high contrast and dark on light. All 8 codes were scanned from the print files at 300 dpi and at 150 dpi, and every one opened burnrebeccalouise.com/citylifestyle.</div>
+
+<h3>BEFORE THIS GOES TO PRINT (NOT DONE, NEEDS YOUR YES)</h3>
+<div class="card">1. <b>The /citylifestyle page</b> on burnrebeccalouise.com doesn't exist yet, so the QR goes nowhere until it's built. It's built on a draft first with the full checkout checks, never as a quick deploy.<br>
+2. <b>A 10% coupon, CITYLIFE10, in Stripe.</b> I haven't touched Stripe. You decide: which memberships it covers (monthly, yearly or all), first payment only or ongoing, an end date, and whether it's new members only.<br>
+3. <b>Optional:</b> an end date on the ad ("Offer ends …") to create urgency, once you've picked one.</div>
+</div>
+
+<script>
+const D=[
+["01-hey-lakewood-ranch","HEY, LAKEWOOD RANCH!","Local hello, flex photo, black panel. The local name catches readers' eyes."],
+["02-ready-to-feel-stronger","READY TO FEEL STRONGER?","Uses one of your approved headlines. Lavender split with the dumbbell photo."],
+["03-ten-percent-off","10% OFF","Offer first. Huge BURN-green 10% OFF and a smiling photo. The hardest-selling of the eight."],
+["04-your-workout-is-ready","YOUR WORKOUT IS READY.","App angle with the phone photo. 'Open the app. Press play. Done.'"],
+["05-lets-get-you-started","LET'S GET YOU STARTED!","Your approved line. Full-bleed photo with a lavender card."],
+["06-small-changes","SMALL CHANGES MAKE A BIG DIFFERENCE.","Your approved line. BURN green with an arched photo, bright and summery."],
+["07-train-with-me-at-home","TRAIN WITH ME AT HOME.","Personal, from you: 'Hi, I'm Rebecca!' Seated phone photo."],
+["08-lakewood-ranch-lets-move","LAKEWOOD RANCH, LET'S MOVE!","Local call to action, squat photo, high energy."]];
+let i=0;const $=id=>document.getElementById(id);
+const f=k=>'BURN-CityLifestyle-LWR-'+k;
+D.forEach((d,j)=>{const s=document.createElement('span');s.onclick=()=>go(j);$('dots').appendChild(s);
+ const t=document.createElement('img');t.src='img/'+f(d[0])+'.jpg';t.alt=d[1];t.onclick=()=>go(j);$('thumbs').appendChild(t);});
+function go(j){i=(j+D.length)%D.length;const d=D[i];$('main').src='img/'+f(d[0])+'.jpg';$('main').alt=d[1];
+ $('num').textContent='Design '+(i+1)+' of '+D.length;$('ttl').textContent=d[1];$('why').textContent=d[2];
+ $('pdf').href='pdf/'+f(d[0])+'.pdf';$('pdfb').href='pdf/'+f(d[0])+'-with-0.125in-bleed.pdf';
+ [...$('dots').children].forEach((s,k)=>s.className=k==i?'on':'');[...$('thumbs').children].forEach((s,k)=>s.className=k==i?'on':'');}
+$('prev').onclick=()=>go(i-1);$('next').onclick=()=>go(i+1);$('main').onclick=()=>go(i+1);
+document.onkeydown=e=>{if(e.key=='ArrowRight')go(i+1);if(e.key=='ArrowLeft')go(i-1)};
+let x0=null;$('stage').addEventListener('touchstart',e=>x0=e.touches[0].clientX);
+$('stage').addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null});
+function mode(p){document.body.className=p?'print':'large';$('bPrint').className=p?'on':'';$('bLarge').className=p?'':'on';$('printHint').style.display=p?'block':'none'}
+$('bLarge').onclick=()=>mode(0);$('bPrint').onclick=()=>mode(1);go(0);
+</script></body></html>
